@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 20px;
+        }
+
+        #nav ul {
+            list-style-type: none;
+        }
+
+        #products article {
+            margin: 30px 0;
+            width: 25%;
+        }
+
+        form label {
+            display: block;
+            padding: 5px 0;
+        }
+
+        form input {
+            display: block;
+            padding: 5px;
+        }
+
+        h2 {
+            background-color: #d1d1d1;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Navegación -->
+        <nav id="nav">
+            <h2>Navegación</h2>
+            <ul>
+                <li><a href="#top">Inicio</a></li>
+                <li><a href="#products">Productos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Productos -->
+        <section id="products">
+            <h2>Productos</h2>
+            <article>
+                <div>
+                    <img src="https://http2.mlstatic.com/D_Q_NP_680636-MLA79692756607_102024-P.webp"
+                        alt="imagen de celular">
+                    <h3>TCL 505</h3>
+                </div>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <span>$160.000</span>
+            </article>
+            <article>
+                <div>
+                    <img src="https://http2.mlstatic.com/D_Q_NP_852319-MLA81191960137_122024-P.webp"
+                        alt="imagen de celular">
+                    <h3>Moto E14</h3>
+                </div>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+                <span>$150.000</span>
+            </article>
+            <article>
+                <div>
+                    <img src="https://http2.mlstatic.com/D_Q_NP_873014-MLA81516558949_122024-P.webp"
+                        alt="imagen de celular">
+                    <h3>TCL 50</h3>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur.</p>
+                <span>$290.000</span>
+            </article>
+        </section>
+    </main>
+
+    <!-- Contacto -->
+    <footer id="contact">
+        <h2>Contacta con nosotros</h2>
+        <form action="">
+            <label for="">
+                Nombre:
+                <input type="text">
+            </label>
+            <label for="">
+                Email:
+                <input type="text">
+            </label>
+            <label for="mensaje">
+                Mensaje:
+            </label>
+            <textarea name="Mensaje" id="mensaje" cols="30" rows="10"></textarea>
+            <input type="submit" value="Enviar">
+        </form>
+        <a href="#top">Volver arriba</a>
+    </footer>
+</body>
+
+</html>
