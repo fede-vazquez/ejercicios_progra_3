@@ -1,0 +1,183 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+ul{
+    list-style-type: none;
+}
+
+body{
+    background-color: #d9d9d9;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    width: 100%;
+}
+
+article{
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+header nav ul{
+    display: flex;
+}
+
+header nav ul li{
+    padding: 5px;
+}
+
+#user-icon{
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.banner{
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 12px;
+    scroll-snap-type: x mandatory;
+}
+
+.banner-item img{
+    min-width: 450px;
+    height: 600px;
+    border-radius: 8px;
+    scroll-snap-align: center;
+}
+
+.banner-item img::scroll-maker{
+
+}
+
+h2{
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+}
+
+#news {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+#news article{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;
+    overflow: hidden;
+    padding: 0;
+}
+
+#news article img{
+    border-radius: 10px 10px 0 0;
+}
+
+#news article div{
+    padding: 5px 20px 10px;
+}
+
+#exp{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#exp div {
+    display: flex;
+}
+
+#exp div article{
+    display: relative;
+    width: 300px;
+}
+
+#exp div img{
+    position: relative;
+    top: 10px;
+    right: 10px;
+    width: 300px;
+    z-index: -1;
+    border-radius: 10px;
+}
+
+#brands{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#brands ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+#brands ul li{
+    background-color: #f0f0f0;
+    height: 130px;
+    width: 130px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#brands ul li img{
+    width: 100px;
+}
+
+.button {
+    padding: 2px 50px;
+    border-radius: 10px;
+    border: 1px solid gray;
+    color: #454545;
+    margin-top: 20px;
+}
+
+footer{
+    background-color: black;
+    height: 400px;
+    margin-top: 100px;
+    color: white;
+    padding: 10px 40px;
+}
+
+footer section{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-bottom: 1px solid white;
+    max-width: 70%;
+    margin: auto;
+}
+
+footer section div{
+    display: flex;
+    gap: 50px;
+}
+footer section ul li{
+    padding: 5px 0;
+}
+
+footer>p{
+    max-width: 70%;
+    margin: auto;
+    text-align: end;
+}
