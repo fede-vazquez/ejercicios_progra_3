@@ -13,31 +13,80 @@ body{
     background-color: #e4e4e4;
 }
 
-header{
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    width: 100%;
-    background-color: #f0f0f0;
-}
-
-article{
+article {
     background-color: #f0f0f0;
     padding: 20px;
     border-radius: 20px;
 }
-section{
+
+section {
     width: 88%;
     margin: auto;
     max-width: 1200px;
 }
 
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10% 0;
+    background-color: #f0f0f0;
+}
+
+header nav ul li a {
+    all: unset;
+}
+
 header nav ul{
     display: flex;
+    gap: 20px;
+    height: 100%;
 }
 
 header nav ul li{
-    padding: 5px;
+    padding: 0 10px;
+    font-weight: bold;
+    cursor: pointer;
+    height: 100%;
+    position: relative;
+}
+
+header>nav>ul>li:hover {
+    border-bottom: 5px solid black;
+}
+
+header nav ul li ul {
+    background-color: #f0f0f0;
+    color: #454545;
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    display: none;
+    box-shadow: 0 0 5px black;
+}
+
+header nav ul li:hover ul{
+    display: block;
+    height: auto;
+    width: 100%;
+    padding: 10px;
+}
+
+header nav ul li span img{
+    width: 10px;
+    transition: all 0.5s;
+}
+
+header nav ul li ul li{
+    padding: 10px;
+}
+
+header nav ul li ul li:hover {
+    font-weight: bold;
+    font-size: 110%;
+}
+
+header nav ul li:hover span img{
+    rotate: 90deg;
 }
 
 #user-icon{
