@@ -10,7 +10,7 @@ ul{
 }
 
 body{
-    background-color: #d9d9d9;
+    background-color: #e4e4e4;
 }
 
 header{
@@ -18,6 +18,7 @@ header{
     justify-content: space-between;
     padding: 10px;
     width: 100%;
+    background-color: #f0f0f0;
 }
 
 article{
@@ -26,7 +27,7 @@ article{
     border-radius: 20px;
 }
 section{
-    width: 70%;
+    width: 88%;
     margin: auto;
     max-width: 1200px;
 }
@@ -60,6 +61,19 @@ header nav ul li{
     gap: 20px;
     padding: 12px;
     scroll-snap-type: x mandatory;
+
+    scrollbar-width: none;
+
+    scroll-marker-group: after;
+}
+
+.banner::scroll-marker-group {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    height: 20px;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
 .banner-item{
@@ -71,6 +85,18 @@ header nav ul li{
     justify-content: center;
     align-items: center;
     overflow: hidden;
+}
+
+.banner-item::scroll-marker {
+    content: " ";
+    border: 1px solid black;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+}
+
+.banner-item::scroll-marker:target-current{
+    background-color: black;
 }
 
 .banner-item img{
@@ -95,7 +121,6 @@ h2{
     gap: 10px;
     width: calc(50% - 10px);
     min-width: 300px;
-    overflow: hidden;
     padding: 0;
 }
 
@@ -104,7 +129,12 @@ h2{
 }
 
 #news article div{
-    padding: 5px 20px 10px;
+    padding: 20px;
+    min-height: 150px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 #exp{
@@ -169,11 +199,12 @@ h2{
 }
 
 .button {
-    padding: 2px 50px;
+    padding: 5px 100px;
     border-radius: 10px;
     border: 1px solid gray;
     color: #454545;
     margin-top: 20px;
+    font-weight: bold;
 }
 
 footer{
