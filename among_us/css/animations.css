@@ -1,0 +1,51 @@
+@keyframes salto-cuerpo {
+    to{
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes salto-pierna-derecha {
+    to{
+        transform: rotate(-45deg) translateX(50%) translateY(20%);
+        height: 24%;
+        border-start-end-radius: 50px;
+    }
+}
+
+@keyframes salto-pierna-izquierda {
+    to{
+        transform: rotate(30deg) translateX(-40%) translateY(-50%);
+        height: 24%;
+        border-start-start-radius: 50px;
+        height: 15%;
+    }
+}
+
+@keyframes salto-pierna-izquierda-cuerpo {
+    to{
+        transform: translateY(-20px);
+        border-end-start-radius: 40px;
+    }
+}
+
+.cuerpo-luz,
+.linea-baja,
+.mochila,
+.mochila-luz,
+.lente,
+.lente-luz,
+.lente-luz-plus{
+    animation: salto-cuerpo 300ms infinite alternate;
+}
+
+.cuerpo{
+    animation: salto-pierna-izquierda-cuerpo 300ms infinite alternate;
+}
+
+.pierna-derecha{
+    animation: salto-pierna-derecha 300ms infinite alternate;
+}
+
+.pierna-izquierda{
+    animation: salto-pierna-izquierda 300ms infinite alternate;
+}
