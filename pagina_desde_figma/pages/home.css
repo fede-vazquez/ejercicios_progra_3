@@ -1,0 +1,39 @@
+section {
+    margin: 20px 0;
+}
+
+a {
+    color: white;
+    text-decoration: underline;
+}
+
+#banner{
+    background: var(--primary-gradient);
+    padding: 50px 20px;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#our-services{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.service-card{
+    background-color: var(--bg-2);
+    padding: 30px 20px;
+    border-radius: var(--border-radius);
+}
+
+#banner button{
+    all: unset;
+    background-color: var(--bg);
+    border-radius: var(--border-radius-2);
+    padding: 5px 10px;
+    color: var(--primary);
+    font-weight: normal;
+    margin: 10px 0;
+}
