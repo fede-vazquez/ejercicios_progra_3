@@ -1,4 +1,5 @@
 const containerEl = document.getElementById("character-container");
+const paginationElementEl = document.getElementById("pagination-buttons");
 const firstBtn = document.getElementById("first");
 const prevBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
@@ -13,15 +14,26 @@ async function fetchCharacter(url) {
         const data = await res.json();
 
         containerEl.innerHTML = "";
-        displayCharacter(data.items);
-        updatePagination(data.links);
+
+        // nullish coalescing
+
+        displayCharacter(data.items ?? data);
+
+        if (data.links) {
+            paginationElementEl.style.display = "block";
+            updatePagination(data.links);
+        } else {
+            paginationElementEl.style.display = "none";
+        }
+
+        if (data.length === 0)
+            throw new Error("No se a encontrado el o los personajes");
     } catch (err) {
-        containerEl.innerHTML = "<h1>Error al cargar los personajes</h1>";
+        containerEl.innerHTML = `<p>${err}</p>`;
         console.log(err);
     }
 }
 
-fetchCharacter(currentApi);
 function displayCharacter(characters) {
     characters.forEach(({ image, name, race, ki }) => {
         const card = document.createElement("div");
@@ -57,3 +69,39 @@ function updatePagination(links) {
         lastBtn.disabled = true;
     }
 }
+
+fetchCharacter(currentApi);
+
+// search
+
+const searchInputEl = document.getElementById("search-input");
+
+searchInputEl.addEventListener("keypress", e => {
+    if (e.key === "Enter") {
+        const query = searchInputEl.value.trim().toLowerCase();
+
+        if (query == "") {
+            fetchCharacter(currentApi);
+            return;
+        }
+        const allCharEl = document.querySelectorAll(".character-card");
+
+        allCharEl.forEach(el => {
+            const name = el.querySelector("h3").innerText.toLowerCase();
+            if (name === query) {
+                encontrado = true;
+                containerEl.innerHTML = "";
+                containerEl.appendChild(el);
+                return;
+            }
+        });
+
+        try {
+            const urlToSearchByName = `${currentApi}?name=${query}`;
+
+            fetchCharacter(urlToSearchByName);
+        } catch (err) {
+            containerEl.innerHTML = `<p>${err}</p>`;
+        }
+    }
+});
