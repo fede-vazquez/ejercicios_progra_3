@@ -46,10 +46,18 @@ ul {
 }
 
 li {
-    padding: 5px;
+    padding: 10px;
     background-color: #333;
     margin: 5px;
     width: 100%;
     display: flex;
     justify-content: space-between;
+}
+
+.completada span {
+    text-decoration: line-through;
+}
+
+.completada {
+    background-color: #204020;
 }

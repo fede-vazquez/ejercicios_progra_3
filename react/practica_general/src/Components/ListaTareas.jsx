@@ -23,18 +23,15 @@ function ListaTareas() {
         setTareas(prev => prev.filter(t => t.nombre !== tareaParaEliminar));
     };
 
-    // Algo va mal, se cambia pero no.
-    const handleChangeCompleted = tareaParaCambiar => {
-        setTareas(prev => {
-            const copiaTareas = [...prev];
-            const tareaIndex = copiaTareas.findIndex(
-                t => (t.nombre = tareaParaCambiar)
-            );
-            copiaTareas[tareaIndex].isCompleted =
-                !copiaTareas[tareaIndex].isCompleted;
+    // Cuando uso la callback en el setTareas no funca.
 
-            return copiaTareas;
-        });
+    const handleChangeCompleted = tareaParaCambiar => {
+        const copiaTareas = [...tareas];
+        const tarea = copiaTareas.find(t => t.nombre === tareaParaCambiar);
+
+        tarea.isCompleted = !tarea.isCompleted;
+
+        setTareas(copiaTareas);
     };
 
     return (
@@ -51,7 +48,7 @@ function ListaTareas() {
                 <button onClick={handleAddTask}>Agregar tarea</button>
             </form>
 
-            {tareas ? (
+            {tareas.length ? (
                 <ul>
                     {tareas.map(t => (
                         <TareaEnLista

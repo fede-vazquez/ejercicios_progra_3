@@ -1,7 +1,7 @@
 function TareaEnLista({ tarea, handleRemoveTask, handleChangeCompleted }) {
     return (
-        <li>
-            {tarea.nombre} {tarea.isCompleted && <h1>fiumba</h1>}
+        <li className={tarea.isCompleted ? "completada" : ""}>
+            <span>{tarea.nombre}</span>
             <div>
                 <button onClick={() => handleRemoveTask(tarea.nombre)}>
                     Eliminar
